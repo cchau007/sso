@@ -1,4 +1,5 @@
 <script src="login.js" type="text/javascript"></script>
+<script src="validation.js"></script>
 <link  rel="stylesheet" type="text/css" href="common.css"></link>
 
 <body>
@@ -42,9 +43,9 @@
 			<input type="text" name="field2" placeholder="Member Id *">
 			<input type="text" name="field3" placeholder="First Name *">
 			<input type="text" name="field4" placeholder="Last Name *">
-			<input type="text" name="field5" placeholder="Password *">
-			<input type="text" name="field6" placeholder="Phone *">
-			<input type="text" name="field7" placeholder="SSN *">
+			<input id="password" class="password" type="text" name="field5" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' placeholder="Pass*(1 lowercase & capital, 1 Number, length:8)">
+			<input type="text" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' name="field6" placeholder="Phone * (Format: +1(999)999-9999)">			
+			<input id="ssn" class="ssn" type="text" name="field7" placeholder="SSN *" onBlur = "myFunc()">
 			<input type="email" name="field8" placeholder="Email *">
 			<input type="email" name="field9" placeholder="Confirm Email *">
 			<input type="submit" value="Submit" style="font-size: unset"/>
@@ -91,7 +92,7 @@
 
 
 <div id="login" style="display:none" class="form-style-5" width="1500" height="550">
-	<form>
+	<form action="http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/insurance/mainprofile.jsp">
 		<fieldset>
 			<legend>
 				<span class="number"></span> Login
@@ -111,3 +112,17 @@
 
 <div id="homediv3" class="homediv3" height="100%" width="33%" style="float:left" >
 </div>
+
+<script>
+function myFunc() {
+   var patt = new RegExp("\d{3}[\-]\d{2}[\-]\d{4}");
+   var x = document.getElementById("ssn");
+   var res = patt.test(x.value);
+   if(!res){
+    x.value = x.value
+        .match(/\d*/g).join('')
+        .match(/(\d{0,3})(\d{0,2})(\d{0,4})/).slice(1).join('-')
+        .replace(/-*$/g, '');
+   }
+}
+</script>
