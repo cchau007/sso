@@ -42,7 +42,7 @@
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
-					<div  class="contact-button">PLANS<span>PLANS</span></div>
+					<div onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" class="contact-button">PLANS<span>PLANS</span></div>
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >

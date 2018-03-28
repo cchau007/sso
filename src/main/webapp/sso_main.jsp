@@ -1,4 +1,3 @@
-Welcome
 <script src="login.js" type="text/javascript"></script>
 <script src="validation.js"></script>
 <link  rel="stylesheet" type="text/css" href="common.css"></link>
@@ -93,7 +92,7 @@ Welcome
 
 
 <div id="login" style="display:none" class="form-style-5" width="1500" height="550">
-	<form action="http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/insurance/mainprofile.jsp">
+	<form action="http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp">
 		<fieldset>
 			<legend>
 				<span class="number"></span> Login
