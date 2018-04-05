@@ -15,8 +15,8 @@
 			<legend>
 				<span class="number"></span> Enter your new password
 			</legend>
-			<input type="text" name="field2" placeholder="New password *">
-			<input type="email" name="field3" placeholder="Re-enter your new password*">
+			<input type="text" name="newPassword" placeholder="New password *">
+			<input type="email" name="repeatNewPassword" placeholder="Re-enter your new password*">
 			<input type="submit" value="Submit" style="font-size: unset"/>
 		</fieldset>
 	</form>
@@ -28,7 +28,7 @@
 			<legend>
 				<span class="number"></span> Please enter the passcode emailed to you
 			</legend>
-			<input type="text" name="field2" placeholder="Your Passcode *">
+			<input type="text" name="passCode" placeholder="Your Passcode *">
 			<input onclick="showreset()" type="button" value="Submit" style="font-size: unset"/>
 		</fieldset>
 	</form>
@@ -40,14 +40,14 @@
 			<legend>
 				<span class="number"></span> Register
 			</legend>
-			<input type="text" name="field2" placeholder="Member Id *">
-			<input type="text" name="field3" placeholder="First Name *">
-			<input type="text" name="field4" placeholder="Last Name *">
-			<input id="password" class="password" type="text" name="field5" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' placeholder="Pass*(1 lowercase & capital, 1 Number, length:8)">
-			<input type="text" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' name="field6" placeholder="Phone * (Format: +1(999)999-9999)">			
-			<input id="ssn" class="ssn" type="text" name="field7" placeholder="SSN *" onBlur = "myFunc()">
-			<input type="email" name="field8" placeholder="Email *">
-			<input type="email" name="field9" placeholder="Confirm Email *">
+			<input type="text" name="memid" placeholder="Member Id *">
+			<input type="text" name="fName" placeholder="First Name *">
+			<input type="text" name="lName" placeholder="Last Name *">
+			<input id="password" class="password" type="text" name="registrationPassword" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' placeholder="Pass*(1 lowercase & capital, 1 Number, length:8)">
+			<input type="text" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' name="phone" placeholder="Phone * (Format: +1(999)999-9999)">			
+			<input id="ssn" class="ssn" type="text" name="ssn" placeholder="SSN *" onBlur = "myFunc()">
+			<input type="email" name="registrationEmail" placeholder="Email *">
+			<input type="email" name="registrationConfirmEmail" placeholder="Confirm Email *">
 			<input type="submit" value="Submit" style="font-size: unset"/>
 		</fieldset>
 	</form>
@@ -79,26 +79,24 @@
 </div>
 
 <div id ="forgotPassword" style="display:none" class="form-style-5" width="1500" height="550">
-	<form>
 		<fieldset>
 			<legend>
 				<span class="number"></span> Enter the email you are registered with
 			</legend>
-			<input type="email" name="field2" placeholder="Your Email *">
-			<input onclick ="showpasscode()" type="button" value="Submit" style="font-size: unset"/>
+			<input id="forgotPasswordEmailID" type="email" name="forgotPasswordEmailID" placeholder="Your Email *">
+			<input onclick ="generatePasscode()" type="button" value="Submit" style="font-size: unset"/>
 		</fieldset>
-	</form>
 </div>
 
 
 <div id="login" style="display:none" class="form-style-5" width="1500" height="550">
-	<form action="http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp">
+	<form action="login">
 		<fieldset>
 			<legend>
 				<span class="number"></span> Login
 			</legend>
-			<input type="text" name="field2" placeholder="Your username *">
-			<input type="text" name="field2" placeholder="Your password *">
+			<input type="text" name="userid" placeholder="Your username *">
+			<input type="text" name="password" placeholder="Your password *">
 			<input type="submit" value="Submit" style="font-size: unset"/>
 			<br>
 			<div style="text-align:center">
