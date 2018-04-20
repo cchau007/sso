@@ -1,8 +1,7 @@
 <script src="login.js" type="text/javascript"></script>
-<script src="validation.js"></script>
 <link  rel="stylesheet" type="text/css" href="common.css"></link>
 
-<body>
+<body onload="customTabAccess()">
 <div>
 <div id="homediv1" class="homediv1"height="100%" width="33%" style="float:left">
 </div>
@@ -40,7 +39,7 @@
 			<legend>
 				<span class="number"></span> Register
 			</legend>
-			<input type="text" name="memid" placeholder="Member Id *">
+			<input type="text" name="memid" placeholder="Username *">
 			<input type="text" name="fName" placeholder="First Name *">
 			<input type="text" name="lName" placeholder="Last Name *">
 			<input id="password" class="password" type="text" name="registrationPassword" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' placeholder="Pass*(1 lowercase & capital, 1 Number, length:8)">

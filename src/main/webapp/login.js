@@ -1,3 +1,4 @@
+	
 	function showreset()
 	{
 		document.getElementById("passcode").style.display="none";
@@ -104,7 +105,16 @@
 		document.getElementById("login").style.display="none";
 		
 	}
+
+	function customTabAccess()
+	{
+	var currentUrl=window.location.href;
+	if(currentUrl.indexOf("?tab=ContactUs")>0)
+	showcontact();
+	else if(currentUrl.indexOf("?tab=About")>0)
+	showabout();
 	
+	}	
 	
 
 	function generatePasscode()

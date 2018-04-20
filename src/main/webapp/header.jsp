@@ -1,3 +1,4 @@
+ <% String ipAddress="localhost"; %>
  <script src="login.js" type="text/javascript"></script>
  <link  rel="stylesheet" type="text/css" href="common.css"></link>
  
@@ -38,19 +39,19 @@
 				<div id="menus" style="height:90%;width:100%">
 				<div style="float:left;width:10%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%">
-					 <div  onclick="showhome()" class="contact-button">HOME<span>HOME</span></div>
+					 <div  onclick="location.href='http://<%= ipAddress %>:8080/uneego.jsp';" class="contact-button">HOME<span>HOME</span></div>
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
-					<div onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" class="contact-button">PLANS<span>PLANS</span></div>
+					<div onclick="location.href='http://<%= ipAddress %>:8080/main.jsp';" class="contact-button">PLANS<span>PLANS</span></div>
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
-					<div  onclick="showabout()" class="contact-button">ABOUT<span>ABOUT</span></div>
+					<div  onclick="location.href='http://<%= ipAddress %>:8080/uneego.jsp?tab=About';" class="contact-button">ABOUT<span>ABOUT</span></div>
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
-					<div  onclick="showcontact()" class="contact-button">CONTACT US<span>CONTACT US</span></div>
+					<div  onclick="location.href='http://<%= ipAddress %>:8080/uneego.jsp?tab=ContactUs';" class="contact-button">CONTACT US<span>CONTACT US</span></div>
 				</div>
 				<div style="float:left;width:5%;height:100%"></div>
 			</div>

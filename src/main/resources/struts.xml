@@ -5,17 +5,17 @@
   
 <struts>
   
-  <constant name="struts.devMode" value="true" />
+  <constant name="struts.devMode" value="false" />
   <constant name="struts.objectFactory" value="spring" />
   
   <package name="default"  extends="json-default">
    
    <action name="login" class="com.uneegohs.sso.model.Authenticate" method="authenticateUser" >
-		<result name="success" type = "redirect" >http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp</result>
+		<result name="success" type = "redirect" >http://ec2-18-219-207-158.us-east-2.compute.amazonaws.com:8080/main.jsp</result>
 		<result name="failure">/uneego.jsp</result>
 	</action>
 	
-	    <action name="sendPasscode" class="com.uneegohs.sso.model.ForgotPassword" method="forgotPassword">
+	    <!-- <action name="sendPasscode" class="com.uneegohs.sso.model.ForgotPassword" method="forgotPassword">
       	<result type="json"></result>
     </action>
     
@@ -23,6 +23,6 @@
 	    <action name="registration" class="com.uneegohs.sso.model.Registration" method="registerNewUser">
       	<result type="json"></result>
     </action>
-     
+     --> 
   </package>
 </struts>

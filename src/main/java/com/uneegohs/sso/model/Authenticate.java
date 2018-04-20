@@ -1,6 +1,14 @@
 package com.uneegohs.sso.model;
 
-public class Authenticate {
+import org.springframework.stereotype.Component;
+import com.jdbc.DatabaseConnection;
+import com.jdbc.UsersTable;
+import com.opensymphony.xwork2.ActionSupport;
+
+import java.sql.Connection;
+
+@Component
+public class Authenticate extends ActionSupport{
 
 		String userid;
 		public String getUserid() {
@@ -22,14 +30,30 @@ public class Authenticate {
 		String password;
 		
 		public String authenticateUser() {
-			System.out.println("inside authenticate user action class");
-			if((userid.equals("chetan")) && (password.equals("java"))) {
+			String msg="";
+			Connection conn=null;
+			try{
+				conn = DatabaseConnection.getDBConnection();
+				conn.setAutoCommit(false);
+				
+					boolean result = UsersTable.validateLogin(userid,password,conn);
+					if(result==true)
+						 msg="success";
+					else
+						msg="failure";
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			/*if((userid.equals("")) && (password.equals(""))) {
 				String result="success";
 				return result;
 			}
 			else {
 				String result ="failure";
 				return result;
-			}
+			}*/
+		
+		return msg;
 		}
 }
